@@ -1,0 +1,53 @@
+package Auth;
+
+import Database.Database;
+import Domain.User;
+
+public class Register {
+
+    public boolean createUser(String name, String password, int age) {
+        if (checkUserInput(name, password, age)) {
+            User newUser = new User(name, password, age);
+            Database database = Database.getDatabase();
+            try {
+                database.setUser(newUser);
+            } catch (Exception e) {
+                System.err.println("Can't Register the user : " + e.getMessage());
+            }
+            return true;
+        } else {
+            System.out.println("Give it Another Shot");
+            return false;
+        }
+    }
+
+    public static boolean isNameTrue(String name) {
+
+        return name.length() >= 3;
+    }
+
+    public static boolean isPasswordTrue(String password) {
+        return password.length() > 5;
+    }
+
+    public static boolean isAgeTrue(int age) {
+        return age > 0;
+    }
+
+    public boolean checkUserInput(String name, String password, int age) {
+        if (!isNameTrue(name)) {
+            System.out.println("Name should be at least 3 characters");
+            return false;
+        } else if (!isPasswordTrue(password)) {
+            System.out.println("be at least 6 characters");
+            return false;
+        } else if (!isAgeTrue(age)) {
+            System.out.println("Age must be greater then 0");
+            return false;
+        } else {
+            return true;
+        }
+
+    }
+
+}
