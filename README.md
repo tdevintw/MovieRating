@@ -4,7 +4,7 @@ MovieRating is a Java-based console application that allows users to rate and ma
 
 ## Screenshots
 
-![App Screenshot](https://i.ibb.co/mNQXThZ/Screenshot-2024-09-04-202545.png)
+![App Screenshot]([https://i.ibb.co/mNQXThZ/Screenshot-2024-09-04-202545.png](https://i.ibb.co/mNQXThZ/Screenshot-2024-09-04-202545.png))
 
 
 ## 🚀 About Me
