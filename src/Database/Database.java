@@ -14,14 +14,15 @@ public class Database {
     private Map<Integer, Movie> movies;
 
     private Database() {
-        database.users = new ArrayList<>();
-        database.movies = new HashMap<>();
+
     }
 
 
     public static Database getDatabase() {
-        if (Database.database == null) {
+        if (database == null) {
             database = new Database();
+            database.users = new ArrayList<>();
+            database.movies = new HashMap<>();
         }
         return database;
     }

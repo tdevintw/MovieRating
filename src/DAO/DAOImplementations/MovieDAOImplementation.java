@@ -6,6 +6,7 @@ import Domain.Genre;
 import Domain.Movie;
 
 import java.util.List;
+import java.util.Map;
 
 
 public class MovieDAOImplementation implements MovieDAOInterface {
@@ -29,6 +30,12 @@ public class MovieDAOImplementation implements MovieDAOInterface {
     public void delete(int id) {
         Database.getDatabase().getMovies().remove(id);
     }
+
+    @Override
+    public Map<Integer, Movie> getAllMovies() {
+       return  Database.getDatabase().getMovies();
+    }
+
 
     @Override
     public List<Movie> filterByGenre(Genre genre) {

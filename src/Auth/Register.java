@@ -39,7 +39,7 @@ public class Register {
             System.out.println("Name should be at least 3 characters");
             return false;
         } else if (!isPasswordTrue(password)) {
-            System.out.println("be at least 6 characters");
+            System.out.println("Password must be at least 6 characters");
             return false;
         } else if (!isAgeTrue(age)) {
             System.out.println("Age must be greater then 0");

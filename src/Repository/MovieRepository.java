@@ -5,6 +5,7 @@ import Domain.Genre;
 import Domain.Movie;
 
 import java.util.List;
+import java.util.Map;
 
 public class MovieRepository {
     private final MovieDAOInterface movieDAO;
@@ -22,24 +23,61 @@ public class MovieRepository {
         movieDAO.delete(id);
     }
 
+    public void getAllMovies() {
+        if (movieDAO.getAllMovies().isEmpty()) {
+            System.out.println("There is no movies");
+        } else {
+            for (Movie movie : movieDAO.getAllMovies().values()) {
+                System.out.println(" Movie id : " + movie.getId() + "Movie name : " + movie.getTitle() + "Movie rating: " + movie.getRating() + "Movie Genre: " + movie.getGenre());
+            }
+        }
+
+
+    }
 
     public void update(Movie movie) {
         movieDAO.update(movie);
     }
 
 
-    public List<Movie> filterByRating(int ratingRange) {
-        return movieDAO.filterByRating(ratingRange);
+    public void filterByRating(int ratingRange) {
+        if (movieDAO.filterByRating(ratingRange).isEmpty()) {
+            System.out.println("There is no movies");
+
+        } else {
+            for (Movie movie : movieDAO.filterByRating(ratingRange)) {
+                System.out.println(" Movie id : " + movie.getId() + "Movie name : " + movie.getTitle() + "Movie rating: " + movie.getRating() + "Movie Genre: " + movie.getGenre());
+            }
+        }
+
     }
 
 
-    public List<Movie> filterByGenre(Genre genre) {
-        return movieDAO.filterByGenre(genre);
+    public void filterByGenre(Genre genre) {
+        List<Movie> filteredMovies = movieDAO.filterByGenre(genre);
+        if (filteredMovies.isEmpty()) {
+            System.out.println("There is no movies");
+
+        } else {
+            for (Movie movie : filteredMovies) {
+                System.out.println("Movie id : " + movie.getId() +
+                        " Movie name : " + movie.getTitle() +
+                        " Movie rating: " + movie.getRating() +
+                        " Movie Genre: " + movie.getGenre());
+            }
+        }
     }
 
 
-    public List<Movie> searchByTitle(String title) {
-        return movieDAO.searchByTitle(title);
+    public void searchByTitle(String title) {
+        if (movieDAO.searchByTitle(title).isEmpty()) {
+            System.out.println("There is no movies");
+        } else {
+            for (Movie movie : movieDAO.searchByTitle(title)) {
+                System.out.println(" Movie id : " + movie.getId() + "Movie name : " + movie.getTitle() + "Movie rating: " + movie.getRating() + "Movie Genre: " + movie.getGenre());
+            }
+        }
+
     }
 
 }
