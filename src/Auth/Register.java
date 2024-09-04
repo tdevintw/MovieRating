@@ -5,7 +5,7 @@ import Domain.User;
 
 public class Register {
 
-    public boolean createUser(String name, String password, int age) {
+    public static User createUser(String name, String password, int age) {
         if (checkUserInput(name, password, age)) {
             User newUser = new User(name, password, age);
             Database database = Database.getDatabase();
@@ -14,10 +14,10 @@ public class Register {
             } catch (Exception e) {
                 System.err.println("Can't Register the user : " + e.getMessage());
             }
-            return true;
+            return newUser;
         } else {
             System.out.println("Give it Another Shot");
-            return false;
+            return null;
         }
     }
 
@@ -34,7 +34,7 @@ public class Register {
         return age > 0;
     }
 
-    public boolean checkUserInput(String name, String password, int age) {
+    public static boolean checkUserInput(String name, String password, int age) {
         if (!isNameTrue(name)) {
             System.out.println("Name should be at least 3 characters");
             return false;

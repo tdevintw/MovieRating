@@ -8,7 +8,7 @@ import java.util.Optional;
 
 public class Login {
 
-    public User isUserExist(String name) {
+    public static User isUserExist(String name) {
         List<User> users = Database.getDatabase().getUsers();
         Optional<User> searchedUser = users.stream().filter(user -> user.getName().equals(name)).findFirst();
         if (searchedUser.isPresent()) {
@@ -19,7 +19,12 @@ public class Login {
         }
     }
 
-    public boolean isPasswordExist(User user, String password) {
-        return user.getPassword().equals(password);
+    public static boolean isPasswordExist(User user, String password) {
+        if (user.getPassword().equals(password)) {
+            return true;
+        } else {
+            System.out.println("Try Again");
+            return false;
+        }
     }
 }
