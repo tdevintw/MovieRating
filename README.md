@@ -2,10 +2,6 @@
 
 MovieRating is a Java-based console application that allows users to rate and manage movies. This application provides features such as user registration, movie addition, filtering movies by genre and rating, and searching for movies by title. The system includes a simple in-memory database to store user and movie information, with basic CRUD operations for managing data.
 
-## Screenshots
-
-![App Screenshot]([https://i.ibb.co/mNQXThZ/Screenshot-2024-09-04-202545.png](https://i.ibb.co/mNQXThZ/Screenshot-2024-09-04-202545.png))
-
 
 ## 🚀 About Me
 I'm a passionate developer with a strong interest in building applications that enhance user experience and simplify everyday tasks. With experience in Java development, I focus on creating efficient, maintainable, and scalable software solutions.
@@ -35,6 +31,12 @@ The project incorporates several important design patterns and Java features:
 - **DAO Layer**: Interfaces and implementations for data access operations, including `MovieDAOInterface` and `UserDAOInterface`.
 - **Repository Layer**: Facilitates operations on the database by interacting with the DAO layer, including `MovieRepository` and `UserRepository`.
 - **Auth Package**: Contains classes for user authentication, including `Login` and `Register`.
+
+### Prerequisites
+
+- Java Development Kit (JDK) installed on your machine. You can download it from [here](https://www.oracle.com/java/technologies/javase-downloads.html).
+- Git installed on your machine. You can download it from [here](https://git-scm.com/downloads).
+- An Integrated Development Environment (IDE) like IntelliJ IDEA, Eclipse, or NetBeans.
 
 ## 🛠 Skills
 
