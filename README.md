@@ -2,6 +2,11 @@
 
 MovieRating is a Java-based console application that allows users to rate and manage movies. This application provides features such as user registration, movie addition, filtering movies by genre and rating, and searching for movies by title. The system includes a simple in-memory database to store user and movie information, with basic CRUD operations for managing data.
 
+## Screenshots
+
+![App Screenshot](https://i.ibb.co/mNQXThZ/Screenshot-2024-09-04-202545.png)
+
+
 ## 🚀 About Me
 I'm a passionate developer with a strong interest in building applications that enhance user experience and simplify everyday tasks. With experience in Java development, I focus on creating efficient, maintainable, and scalable software solutions.
 
